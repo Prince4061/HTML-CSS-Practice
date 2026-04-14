@@ -67,7 +67,7 @@
     </main>
 
     <!-- Navigation -->
-    <nav class="bg-slate-900 flex shadow-inner border-t border-slate-800 pb-safe">
+    <nav class="bg-slate-900 flex shadow-inner border-t border-slate-800 pb-[50px]">
         <button id="btn-html" onclick="showSection('html')" class="nav-btn active">
             <span class="text-xl">📄</span><br><span class="text-[10px]">HTML</span>
         </button>
@@ -79,18 +79,20 @@
         </button>
     </nav>
     <!-- Ad Banner at the bottom -->
-    <div class="w-full bg-slate-900 border-t border-slate-800 flex justify-center items-center h-[50px] overflow-hidden sticky bottom-0">
-        <!-- Advertisement -->
-        <script type="text/javascript">
-            atOptions = {
-                'key' : '39ec0cb98f16d6cb0c44ddbb5ad55206',
-                'format' : 'iframe',
-                'height' : 50,
-                'width' : 320,
-                'params' : {}
-            };
-        </script>
-        <script type="text/javascript" src="https://www.highperformanceformat.com/39ec0cb98f16d6cb0c44ddbb5ad55206/invoke.js"></script>
+    <div style="position: fixed; bottom: 0; left: 0; width: 100%; height: 50px; background-color: #0f172a; border-top: 1px solid #1e293b; z-index: 9999; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+        <div style="width: 320px; height: 50px; overflow: hidden;">
+            <!-- Advertisement -->
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '39ec0cb98f16d6cb0c44ddbb5ad55206',
+                    'format' : 'iframe',
+                    'height' : 50,
+                    'width' : 320,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="https://www.highperformanceformat.com/39ec0cb98f16d6cb0c44ddbb5ad55206/invoke.js"></script>
+        </div>
     </div>
 
     <script src="script.js"></script>

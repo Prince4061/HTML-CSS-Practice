@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HTML CSS Coding Practice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="overflow-hidden">
+
+    <!-- Custom Confirm Modal -->
+    <div id="confirm-modal" class="fixed inset-0 z-[200] flex items-center justify-center p-6 hidden">
+        <div class="bg-slate-900 border-2 border-slate-700 p-6 rounded-2xl w-full max-w-sm shadow-2xl text-center">
+            <h2 class="kids-font text-2xl text-rose-400 mb-4">Kya aap sure hain?</h2>
+            <p class="text-slate-300 mb-6">Aapka sara likha hua code delete ho jayega!</p>
+            <div class="flex space-x-3">
+                <button onclick="closeModal()" class="flex-1 bg-slate-700 py-3 rounded-xl font-bold">Nahi, ruko!</button>
+                <button onclick="confirmClear()" class="flex-1 bg-rose-500 py-3 rounded-xl font-bold text-white">Haan, hata do!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-slate-900 p-3 shadow-xl flex justify-between items-center text-white border-b border-slate-800">
+        <div class="flex items-center space-x-3">
+            <img src="https://princetech.org.in/static/media/wl_client_images/dd224fe3684344bd8e69f6375ca7b9a8.png" 
+                 alt="Prince Tech Logo" 
+                 class="h-10 w-auto rounded shadow-[0_0_10px_rgba(56,189,248,0.5)]"
+                 onerror="this.src='https://via.placeholder.com/40?text=PT'">
+            <h1 class="text-lg kids-font tracking-wide text-blue-400">HTML CSS Coding Practice</h1>
+        </div>
+        <div class="flex space-x-2">
+            <button onclick="showClearModal()" class="bg-rose-500 hover:bg-rose-600 px-3 py-1.5 rounded-full text-[10px] uppercase font-black tracking-tighter shadow-lg">Clear</button>
+            <button onclick="downloadCode()" class="bg-cyan-500 hover:bg-cyan-600 text-slate-950 px-3 py-1.5 rounded-full text-[10px] uppercase font-black tracking-tighter shadow-lg">Save 💾</button>
+        </div>
+    </header>
+
+    <!-- Toolbar -->
+    <div id="html-toolbar" class="toolbar">
+        <button onclick="insertTag('<h1></h1>', 4)">H1 🅰️</button>
+        <button onclick="insertTag('<p></p>', 3)">Para 📝</button>
+        <button onclick="insertTag('<button></button>', 8)">Button 🔘</button>
+        <button onclick="insertTag('<img src=\'\'>', 10)">Image 🖼️</button>
+        <button onclick="insertTag('<div class=\'box\'></div>', 18)">Box 📦</button>
+        <button onclick="insertTag('<br>', 4)">Enter ⏎</button>
+    </div>
+
+    <main class="main-content flex flex-col">
+        <!-- HTML Section -->
+        <div id="html-section" class="h-full relative">
+            <textarea id="html-input" spellcheck="false" placeholder="Yahan HTML code likho..."></textarea>
+            <div id="suggestion-box"></div>
+        </div>
+
+        <!-- CSS Section -->
+        <div id="css-section" class="h-full hidden relative">
+            <textarea id="css-input" spellcheck="false" placeholder="Yahan CSS style likho..."></textarea>
+        </div>
+
+        <!-- Preview Section -->
+        <div id="preview-section" class="h-full hidden">
+            <div class="h-full w-full p-2 bg-slate-900">
+                <iframe id="preview-frame" class="rounded-lg shadow-2xl border-2 border-slate-700"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900 flex shadow-inner border-t border-slate-800 pb-safe">
+        <button id="btn-html" onclick="showSection('html')" class="nav-btn active">
+            <span class="text-xl">📄</span><br><span class="text-[10px]">HTML</span>
+        </button>
+        <button id="btn-css" onclick="showSection('css')" class="nav-btn">
+            <span class="text-xl">🎨</span><br><span class="text-[10px]">CSS</span>
+        </button>
+        <button id="btn-preview" onclick="showSection('preview')" class="nav-btn">
+            <span class="text-xl">🚀</span><br><span class="text-[10px]">PREVIEW</span>
+        </button>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
